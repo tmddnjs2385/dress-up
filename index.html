@@ -14,8 +14,10 @@
 
 </head>
 
-<body>
-    <div id="html-content-holder">
+<div id="html-content-holder">
+
+    <body>
+
         <h1>KIMU STUDIO</h1>
 
         <ul>
@@ -25,6 +27,8 @@
             <li><input class="btn btn-default" id="btn-Preview-Image" type="button" value="preview" /></li>
             <li><a class="btn btn-default" id="btn-Convert-Html2Image" type="button">save</a></li>
         </ul>
+
+        <img src="image/clothes.png">
 
         <img id="character" class="character"
             src="https://s-media-cache-ak0.pinimg.com/originals/d5/19/f0/d519f0f021325f16e85a193ec3718130.png" />
@@ -75,30 +79,31 @@
 
 
         </div>
-    </div>
-    <script type="text/javascript">
+</div>
+<script type="text/javascript">
 
-        var element = $("#html-content-holder"); // global variable
-        var getCanvas; // global variable
+    var element = $("#html-content-holder"); // global variable
+    var getCanvas; // global variable
 
-        $("#btn-Preview-Image").on('click', function () {
-            html2canvas(element, {
-                onrendered: function (canvas) {
-                    $("#previewImage").append(canvas);
-                    getCanvas = canvas;
-                }
-            });
+    $("#btn-Preview-Image").on('click', function () {
+        html2canvas(element, {
+            onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                getCanvas = canvas;
+            }
         });
+    });
 
-        $("#btn-Convert-Html2Image").on('click', function () {
-            var imgageData = getCanvas.toDataURL("image/png");
-            // Now browser starts downloading it instead of just showing it
-            var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-            $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-        });
+    $("#btn-Convert-Html2Image").on('click', function () {
+        var imgageData = getCanvas.toDataURL("image/png");
+        // Now browser starts downloading it instead of just showing it
+        var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+        $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+    });
 
-    </script>
+</script>
 
 </body>
+</div>
 
 </html>
