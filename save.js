@@ -1,32 +1,44 @@
+window.onload = function () {
+    // 캡쳐 버튼 클릭 이벤트 등록 
+    document.getElementById("edit").addEventListener("click", function (e) {
+        // 마우스 커서 모양 변경 (eidt_cursor 클래스 추가)
+        document.querySelector("body").classList.add("edit_cursor");
 
-// $(document).ready(function () {
+        screenshot(e);
+    });
+}
 
-//     $("#download").on("click", function () {
+function screenshot(e) {
 
-//         html2canvas(document.querySelector("body"), { allowTaint: true }).then(canvas => {
+    var startX, startY;
+    var height = window.innerHeight;
+    var width = window.innerWidth;
 
-//             saveAs(canvas.toDataURL("image/png"), "KIMU_STUDIO.png")
+    var top = "0";
+    var left = "0"
+    var width = "1400";
+    var height = "700";
 
-//         })
+    html2canvas(document.body).then(function (canvas) {
+        //전체 화면 캡쳐 // 선택 영역만큼 crop 
+        var img = canvas.getContext('2d').getImageData(left, top, width, height);
+        var c = document.createElement("canvas");
+        c.width = width;
+        c.height = height;
+        c.getContext('2d').putImageData(img, 0, 0);
+        save(c); // crop한 이미지 저장
+    });
 
+    function save(canvas) {
+        if (navigator.msSaveBlob) {
+            var blob = canvas.msToBlob();
+            return navigator.msSaveBlob(blob, 'KIMU STUDIO.jpg');
+        } else {
+            var el = document.getElementById("target");
+            el.href = canvas.toDataURL("image/jpeg");
+            el.download = 'KIMU STUDIO.jpg';
+            el.click();
+        }
+    }
 
-
-//     });
-
-
-//     function saveAs(uri, filename) {
-
-//         var link = document.createElement('a');
-
-//         if (typeof link.download === "string") {
-//             link.href = uri;
-//             link.download = filename;
-//             document.body.appendChild(link);
-//             link.click();
-//             document.body.removeChild(link);
-//         } else {
-//             window.open(uri);
-//         }
-//     }
-
-// })
+}
