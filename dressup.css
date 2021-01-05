@@ -13,6 +13,7 @@ h1{
     font-size:60px;
 
 
+
 }
 
 
@@ -21,11 +22,13 @@ img{
 	margin-left: 15%;
     display:inline-block;
     height:100%;
+
 }
 
 
 button{
-  margin-top:20%;
+  margin-top:10%;
+  position: absolute;
 }
 
 ul{
