@@ -14,10 +14,14 @@ function screenshot(e) {
     var height = window.innerHeight;
     var width = window.innerWidth;
 
+    console.log(width);
+    console.log(height);
+
     var top = "0";
-    var left = "0"
-    var width = "1400";
-    var height = "700";
+    var left = "0";
+
+    //  var width = "1400";
+    // var height = "700";
 
     html2canvas(document.body).then(function (canvas) {
         //전체 화면 캡쳐 // 선택 영역만큼 crop 
