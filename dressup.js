@@ -28,8 +28,7 @@ $(document).ready(function () {
 
         i = 0;
 
-        var bg = ["https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-simple-and-beautiful-pink-dress-up-background-image_211569.jpg",
-            "https://cdn.pixabay.com/photo/2018/10/22/16/24/christmas-3765751_960_720.jpg", "image/clothes.png"]
+        var bg = ["image/clothes.png", "image/tree.jpg"]
 
         this.Next = function () {
 
@@ -46,10 +45,8 @@ $(document).ready(function () {
             $("body").css(
                 {
                     "background-image": `url(${bg[i]})`,
-                    "backgorund-size": "cover",
-                    "width": "100%",
+                    "backgorund-size": "fill",
 
-                    "background-color": "transparent"
                 }
             );
 
@@ -62,7 +59,7 @@ $(document).ready(function () {
 
     var pants = $(".pant");
     var shirts = $(".shirt");
-    var bg = $(".body");
+    var bg = $("body");
 
     var shirt_picker = new ImageSwitcher(shirts);
     document.getElementById("shirt_button").onclick = function () { shirt_picker.Next(); };

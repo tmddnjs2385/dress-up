@@ -8,9 +8,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="dressup.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 
 </head>
 
@@ -24,11 +23,9 @@
         <li><button class="btn btn-default" id="shirt_button" type="button">shirt</button></li>
         <li><button class="btn btn-default" id="pant_button" type="button">pants</button></li>
         <li><button class="btn btn-default" id="bg_button" type="button">background</button></li>
-        <li><input class="btn btn-default" id="btn-Preview-Image" type="button" value="Preview" /></li>
-        <li><a class="btn btn-default" id="btn-Convert-Html2Image" href="#">save</a></li>
+        <li><input class="btn btn-default" id="edit" type="button" value="capture" /></li>
+        <li><a class="btn btn-default" id="target" href="#" type="button" style="display: none">save</a></li>
     </ul>
-
-    <img src="image/clothes.png">
 
     <img id="character" class="character"
         src="https://s-media-cache-ak0.pinimg.com/originals/d5/19/f0/d519f0f021325f16e85a193ec3718130.png" />
@@ -75,31 +72,56 @@
     <img id="bottom7" class="pant"
         src="https://s-media-cache-ak0.pinimg.com/originals/c3/78/78/c3787895d353d3b4d8534855ae0b1d83.png" />
 
-    <div id="previewImage">
-
 
     </div>
 
     <script type="text/javascript">
 
-        var element = $("#html-content-holder"); // global variable
-        var getCanvas; // global variable
+        window.onload = function () {
+            // 캡쳐 버튼 클릭 이벤트 등록 
+            document.getElementById("edit").addEventListener("click", function (e) {
+                // 마우스 커서 모양 변경 (eidt_cursor 클래스 추가)
+                document.querySelector("body").classList.add("edit_cursor");
 
-        $("#btn-Preview-Image").on('click', function () {
-            html2canvas(element, {
-                onrendered: function (canvas) {
-                    $("#previewImage").append(canvas);
-                    getCanvas = canvas;
-                }
+                screenshot(e);
             });
-        });
+        }
 
-        $("#btn-Convert-Html2Image").on('click', function () {
-            var imgageData = getCanvas.toDataURL("image/png");
-            // Now browser starts downloading it instead of just showing it
-            var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-            $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-        });
+        function screenshot(e) {
+
+            var startX, startY;
+            var height = window.innerHeight;
+            var width = window.innerWidth;
+
+            var top = "0";
+            var left = "0"
+            var width = "1400";
+            var height = "700";
+
+            html2canvas(document.body).then(function (canvas) {
+
+                //전체 화면 캡쳐 // 선택 영역만큼 crop 
+                var img = canvas.getContext('2d').getImageData(left, top, width, height);
+                var c = document.createElement("canvas");
+                c.width = width;
+                c.height = height;
+                c.getContext('2d').putImageData(img, 0, 0);
+                save(c); // crop한 이미지 저장
+            });
+
+            function save(canvas) {
+                if (navigator.msSaveBlob) {
+                    var blob = canvas.msToBlob();
+                    return navigator.msSaveBlob(blob, 'KIMU STUDIO.jpg');
+                } else {
+                    var el = document.getElementById("target");
+                    el.href = canvas.toDataURL("image/jpeg");
+                    el.download = 'KIMU STUDIO.jpg';
+                    el.click();
+                }
+            }
+
+        }
 
     </script>
 
