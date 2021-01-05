@@ -10,7 +10,7 @@ window.onload = function () {
 
 function screenshot(e) {
 
-    var startX, startY;
+
     var height = window.innerHeight;
     var width = window.innerWidth;
 
