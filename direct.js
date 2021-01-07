@@ -18,7 +18,7 @@
             u += '?' + q;
         }
 
-        console.log(u);
-        l.replace('https://' + u);
+
+        // l.replace('https://' + u);
     });
 })(document, location, navigator.userAgent);
