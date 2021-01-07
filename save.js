@@ -39,7 +39,7 @@ function screenshot(e) {
             return navigator.msSaveBlob(blob, 'KIMU STUDIO.jpg');
         } else {
             var el = document.getElementById("target");
-            el.href = canvas.toDataURL("image/jpeg");
+            el.href = canvas.toDataURL("image/jpg");
             el.download = 'KIMU STUDIO.jpg';
             el.click();
         }

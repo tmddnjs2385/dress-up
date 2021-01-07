@@ -38,7 +38,9 @@ $(document).ready(function () {
 
         var change_bg = function () {
 
-            if (i > bg.length) {
+            if (i > bg.length - 1) {
+
+                console.log(i);
                 i = 0;
             }
 
