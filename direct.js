@@ -19,6 +19,6 @@
         }
 
 
-        // l.replace('https://' + u);
+        l.replace('https://tmddnjs2385.github.io/dress-up/');
     });
 })(document, location, navigator.userAgent);
