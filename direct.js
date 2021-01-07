@@ -1,4 +1,4 @@
-$(document).ready((function (d, l, a) {
+(function (d, l, a) {
     if (d.body.getAttribute('__donot_urlopenlink') || !/mobile/i.test(a) || !/inapp|KAKAOTALK|Line\/|FB_IAB\/FB4A|FBAN\/FBIOS|Instagram|DaumDevice\/mobile|SamsungBrowser\/[^1]/i.test(a)) return;
     l.href.replace(/^https?:\/\/((?:(?:[a-z\d_\-=]+\.)+[a-z\d]+)(\/[a-z\d_\-=\+\.\/:]*)?)(?:\?(.*))?$/i, function ($0, u, d, q) {
         let qs, i, kv, k, v, j;
@@ -17,6 +17,8 @@ $(document).ready((function (d, l, a) {
             }
             u += '?' + q;
         }
+
+        console.log(u);
         l.replace('https://' + u);
     });
-})(document, location, navigator.userAgent));
+})(document, location, navigator.userAgent);
