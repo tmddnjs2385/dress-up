@@ -17,8 +17,8 @@ function screenshot(e) {
     console.log(width);
     console.log(height);
 
-    var top = "0";
-    var left = "0";
+    var top = "5";
+    var left = "5";
 
     width = "2000";
     height = "3200";
