@@ -42,6 +42,7 @@ ul{
     position: absolute;
    right:200px;
    bottom: 300px;
+   z-index:10;
 } 
 
 /* li{
@@ -50,7 +51,7 @@ ul{
 .btn-default{
  
   border: 3px solid;
-  width: 400px;
+  width: 200px;
   height: 100px;
   right:200px;
   bottom: 300px;
