@@ -3,7 +3,7 @@
 
     window.open("https://tmddnjs2385.github.io/dress-up/", '_system');
 
-    return false;
+
 
 
 
