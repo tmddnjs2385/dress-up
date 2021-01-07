@@ -41,13 +41,14 @@ $(document).ready(function () {
             if (i > bg.length - 1) {
 
                 console.log(i);
+
                 i = 0;
             }
 
             $("body").css(
                 {
                     "background-image": `url(${bg[i]})`,
-                    "backgorund-size": "fill",
+                    // "backgorund-size": "fill",
 
                 }
             );
