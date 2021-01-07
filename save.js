@@ -20,8 +20,8 @@ function screenshot(e) {
     var top = "0";
     var left = "0";
 
-    //  var width = "1400";
-    // var height = "700";
+    width = "2500";
+    height = "4000";
 
     html2canvas(document.body).then(function (canvas) {
         //전체 화면 캡쳐 // 선택 영역만큼 crop 

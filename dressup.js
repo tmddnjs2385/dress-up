@@ -28,7 +28,7 @@ $(document).ready(function () {
 
         i = 0;
 
-        var bg = ["image/clothes.png", "image/tree.jpg"]
+        var bg = ["image/bg1.jpg", "image/bg2.jpg"]
 
         this.Next = function () {
 

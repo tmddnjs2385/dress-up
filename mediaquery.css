@@ -1,0 +1,25 @@
+@media (max-width:500px) {
+    body{
+        background-color:#cc9ad6;
+        font-family: 'Ubuntu', sans-serif;
+        background-repeat:no-repeat;
+        z-index:-1000;
+        
+    }
+
+    h1{
+        text-align: center;
+        font-family: "roboto";
+        font-size:15px;
+    
+    
+    
+    }
+
+    img{
+        position:  absolute;
+        margin: 0;
+        padding: 0;
+    }
+
+}
