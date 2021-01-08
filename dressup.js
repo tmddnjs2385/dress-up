@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     function ImageSwitcher(choices, i) {
+
         i = 0;
 
         this.Next = function () {
