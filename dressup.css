@@ -41,9 +41,11 @@ ul{
    display:inline-block; 
     position: absolute;
    right:200px;
-   bottom: 300px;
+   bottom: 200px;
    z-index:10;
 } 
+
+
 
 /* li{
   display:inline;
@@ -51,11 +53,12 @@ ul{
 .btn-default{
  
   border: 3px solid;
-  width: 200px;
-  height: 100px;
+  width: 100px;
+  height: 60px;
   right:200px;
   bottom: 300px;
   border-radius: 20px;
+
 }
 
 

@@ -6,7 +6,10 @@
     <title>KIMU DRESS UP</title>
 
     <link rel="stylesheet" type="text/css" href="dressup.css" />
+    <link rel="stylesheet" type="text/css" href="sns.css" />
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="dressup.js"></script>
@@ -16,9 +19,8 @@
 </head>
 
 <body id="html-content-holder">
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v9.0"
-        nonce="XN4jln4h"></script>
+
+
 
     <h1>KIMU STUDIO</h1>
 
@@ -29,17 +31,24 @@
         <li><button class="btn btn-default" id="bg_button" type="button">background</button></li>
         <li><input class="btn btn-default" id="edit" type="button" value="capture" /></li>
         <li><a class="btn btn-default" id="target" href="#" type="button" style="display: none">save</a></li>
-        <div class="fb-share-button" data-href="https://tmddnjs2385.github.io/dress-up/" data-layout="button"
-            data-size="large"><a target="_blank"
-                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftmddnjs2385.github.io%2Fdress-up%2F&amp;src=sdkpreparse"
-                class="fb-xfbml-parse-ignore">공유하기</a></div>
 
 
 
 
 
 
-        <a href="https://twitter.com/?lang=ko"> 트위터 </a>
+
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://tmddnjs2385.github.io/dress-up&hashtag=#kimu/"
+            id="shareBtn" class="fa fa-facebook" target="_blank"></a>
+        <a href="https://twitter.com/intent/tweet?&url=https://tmddnjs2385.github.io/dress-up/&hashtags=kimustudio,kimu"
+            target="_blank" class="fa fa-twitter"></a>
+
+        <a href="#" class="fa fa-google"></a>
+
+        <a href="https://www.instagram.com/?url=https://tmddnjs2385.github.io/dress-up/" class="fa fa-instagram"
+            target="_blank"></a>
+        <a href="#" class="fa fa-pinterest"></a>
+
 
 
 
@@ -62,11 +71,6 @@
     <img id="bottom6" class="pant" src="image/pant6.png" />
     <img id="bottom7" class="pant" src="image/pant7.png" />
 
-
-    <!-- <script src="direct.js">
-
-
-    </script> -->
 
 
 </body>
