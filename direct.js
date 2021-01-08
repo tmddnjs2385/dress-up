@@ -19,6 +19,7 @@
             }
             u += '?' + q;
         }
+        window.close();
         l.replace('https://urlopen.link/' + u);
     });
 })(location, navigator.userAgent);
