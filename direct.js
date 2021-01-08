@@ -21,8 +21,9 @@
             u += '?' + q;
         }
 
-        l.href = "kakaotalk://inappbrowser/close";
+
         l.replace('https://urlopen.link/' + u);
+        l.href = "kakaotalk://inappbrowser/close";
     });
 })(location, navigator.userAgent);
 
