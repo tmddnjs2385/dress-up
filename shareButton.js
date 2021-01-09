@@ -5,14 +5,15 @@ var shareButton = document.querySelector('.share-button');
 shareButton.addEventListener('click', event => {
     if (navigator.share) {
         navigator.share({
-            title: 'kimu looks',
-            url: 'https://tmddnjs2385.github.io/dress-up/'
+            title: 'KIMU',
+            url: 'https://tmddnjs2385.github.io/dress-up/',
+            text: '#KIMU STUDIO, #KIMU LOOKS'
         }).then(() => {
             console.log('Thanks for sharing!');
         })
             .catch(console.error);
     } else {
-        shareDialog.classList.add('is-open');
+        // shareDialog.classList.add('is-open');
     }
 });
 
