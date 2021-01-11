@@ -25,6 +25,14 @@ function screenshot(e) {
 
     html2canvas(document.body).then(function (canvas) {
         //전체 화면 캡쳐 // 선택 영역만큼 crop 
+
+        var context = canvas.getContext('2d');
+
+        context.mozImageSmoothingEnabled = false;
+        context.webkitImageSmoothingEnabled = false;
+        context.msImageSmoothingEnabled = false;
+        context.imageSmoothingEnabled = false;
+
         var img = canvas.getContext('2d').getImageData(left, top, width, height);
         var c = document.createElement("canvas");
         c.width = width;
@@ -34,24 +42,18 @@ function screenshot(e) {
     });
 
     function save(canvas) {
-        // if (navigator.msSaveBlob) {
-        //     var blob = canvas.msToBlob();
-        //     return navigator.msSaveBlob(blob, 'KIMU STUDIO.jpg');
-        // } else {
-        //     var el = document.getElementById("target");
-        //     el.href = canvas.toDataURL("image/jpg");
-        //     el.download = 'KIMU STUDIO.jpg';
-        //     el.click();
-        // }
+        if (navigator.msSaveBlob) {
+            var blob = canvas.msToBlob();
+            return navigator.msSaveBlob(blob, 'KIMU STUDIO.png');
+        } else {
+            var el = document.getElementById("target");
+            el.href = canvas.toDataURL("image/png");
+            el.download = 'KIMU STUDIO.png';
+            el.click();
 
 
 
-
-        const data = canvas.toDataURL('image/png');  //추후에 수정될 수 있음
-        const a = document.createElement('a');
-        a.href = data;
-        a.download = 'image.png';
-        a.click();
+        }
 
     }
 
