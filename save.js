@@ -46,16 +46,11 @@ function screenshot(e) {
             var blob = canvas.msToBlob();
             return navigator.msSaveBlob(blob, 'KIMU STUDIO.png');
         } else {
-            // var el = document.getElementById("target");
-            // el.href = canvas.toDataURL("image/png");
-            // el.download = 'KIMU STUDIO.png';
-            // el.click();
+            var el = document.getElementById("target");
+            el.href = canvas.toDataURL("image/png");
+            el.download = 'KIMU STUDIO.png';
+            el.click();
 
-            const image = canvas.toDataURL();
-            const link = document.createElement("a");
-            link.href = image;
-            link.download = "KIMU.jpg";
-            link.click();
 
         }
 
