@@ -47,7 +47,7 @@ function screenshot(e) {
 
 
 
-        const data = canvas.toDataURL('image/png');
+        const data = canvas.toDataURL('image/png');  //추후에 수정될 수 있음
         const a = document.createElement('a');
         a.href = data;
         a.download = 'image.png';

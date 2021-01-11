@@ -24,7 +24,9 @@
     //     }
 
 
-    l.replace('https://urlopen.link/tmddnjs2385.github.io/dress-up/');
+    // l.replace('https://urlopen.link/tmddnjs2385.github.io/dress-up/');
+
+    window.location.href = 'https://tmddnjs2385.github.io/dress-up/';
 
     // });
 })(location, navigator.userAgent);
