@@ -14,16 +14,16 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="dressup.js"></script>
-    <script src="save.js"></script>
+    <!-- <script src="save.js"></script> -->
     <script src="sns.js"></script>
     <!-- <script src="direct.js"></script> -->
 
 </head>
 
-<body id="html-content-holder">
+<!-- <body id="html-content-holder"> -->
 
 
-
+<body id="capture">
     <h1>KIMU STUDIO</h1>
 
     <ul>
@@ -31,7 +31,7 @@
         <li><button class="btn btn-default" id="shirt_button" type="button">shirt</button></li>
         <li><button class="btn btn-default" id="pant_button" type="button">pants</button></li>
         <li><button class="btn btn-default" id="bg_button" type="button">background</button></li>
-        <li><input class="btn btn-default" id="edit" type="button" value="capture" /></li>
+        <li><input class="btn btn-default" id="edit" type="button" value="capture" onclick="cap()" /></li>
         <li><a class="btn btn-default" id="target" href="#" type="button" style="display: none">save</a></li>
 
         <a class="share-button" type="button" href="https://www.instagram.com/?nibrowser=no" value="share">
@@ -78,7 +78,23 @@
     <img id="bottom6" class="pant" src="image/pant6.png" />
     <img id="bottom7" class="pant" src="image/pant7.png" />
 
-    <script src="shareButton.js">
+    <!-- <script src="shareButton.js">
+
+    </script> -->
+
+    <script>
+
+        function cap() {
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+
+
+                const data = canvas.toDataURL('image/png');  //추후에 수정될 수 있음
+                const a = document.createElement('a');
+                a.href = data;
+                a.download = 'image.png';
+                a.click();
+            });
+        }
 
     </script>
 
