@@ -6,6 +6,7 @@
 
     // l.href.replace(/^https?:\/\/((?:(?:[a-z\d_\-=]+\.)+[a-z\d]+)(\/[a-z\d_\-=\+\.\/:]*)?)(?:\?(.*))?$/i, function ($0, u, d, q) {
     //     let qs, i, kv, k, v, j;
+
     //     if (!d) u += '/';
     //     if (q) {
     //         qs = q.split('&');
