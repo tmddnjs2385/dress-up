@@ -26,7 +26,9 @@
 
     // l.replace('https://urlopen.link/tmddnjs2385.github.io/dress-up/');
 
-    window.location.href = 'https://tmddnjs2385.github.io/dress-up/';
+
+
+    window.open("http://tmddnjs2385.github.io/dress-up/", "_system");
 
     // });
 })(location, navigator.userAgent);

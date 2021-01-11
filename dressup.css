@@ -52,6 +52,15 @@ ul{
 
 }
 
+.share-button{
+  border: 3px solid;
+  width: 100px;
+  height: 60px;
+  right:200px;
+  bottom: 300px;
+  border-radius: 20px;
+}
+
 
 character{
 z-index: -900;   
