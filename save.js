@@ -34,15 +34,25 @@ function screenshot(e) {
     });
 
     function save(canvas) {
-        if (navigator.msSaveBlob) {
-            var blob = canvas.msToBlob();
-            return navigator.msSaveBlob(blob, 'KIMU STUDIO.jpg');
-        } else {
-            var el = document.getElementById("target");
-            el.href = canvas.toDataURL("image/jpg");
-            el.download = 'KIMU STUDIO.jpg';
-            el.click();
-        }
+        // if (navigator.msSaveBlob) {
+        //     var blob = canvas.msToBlob();
+        //     return navigator.msSaveBlob(blob, 'KIMU STUDIO.jpg');
+        // } else {
+        //     var el = document.getElementById("target");
+        //     el.href = canvas.toDataURL("image/jpg");
+        //     el.download = 'KIMU STUDIO.jpg';
+        //     el.click();
+        // }
+
+
+
+
+        const data = canvas.toDataURL('image/png');
+        const a = document.createElement('a');
+        a.href = data;
+        a.download = 'image.png';
+        a.click();
+
     }
 
 }
