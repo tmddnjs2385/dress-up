@@ -50,10 +50,14 @@ function screenshot(e) {
             var el = document.getElementById("target");
 
             console.log(el);
-            console.log(location)
 
-            el.href = canvas.toDataURL("/download/images/png");
-            el.download = 'KIMU STUDIO.png';
+
+
+            el.href = canvas.toDataURL("/download/images/jpeg");
+
+
+            el.download = 'KIMU STUDIO.jpeg';
+
             el.click();
 
 
