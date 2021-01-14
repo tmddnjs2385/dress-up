@@ -20,15 +20,12 @@
                     if (v.charCodeAt(j) > 256 && encodeURIComponent(v[j]).length < 9) return false;
                 }
             }
+
             u += '?' + q;
         }
 
 
-        l.replace('https://urlopen.link/tmddnjs2385.github.io/dress-up/?');
-
-
-
-
+        l.replace('https://urlopen.link/tmddnjs2385.github.io/dress-up/');
 
     });
 })(location, navigator.userAgent);

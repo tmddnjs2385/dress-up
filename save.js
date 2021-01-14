@@ -17,11 +17,11 @@ function screenshot(e) {
     console.log(width);
     console.log(height);
 
-    var top = "5";
-    var left = "5";
+    var top = "300";
+    var left = "400";
 
-    width = "2000";
-    height = "3200";
+    width = "1700";
+    height = "3000";
 
     html2canvas(document.body).then(function (canvas) {
         //전체 화면 캡쳐 // 선택 영역만큼 crop 
@@ -46,10 +46,16 @@ function screenshot(e) {
             var blob = canvas.msToBlob();
             return navigator.msSaveBlob(blob, 'KIMU STUDIO.png');
         } else {
+
             var el = document.getElementById("target");
-            el.href = canvas.toDataURL("images/png");
+
+            console.log(el);
+            console.log(location)
+
+            el.href = canvas.toDataURL("/download/images/png");
             el.download = 'KIMU STUDIO.png';
             el.click();
+
 
 
         }
