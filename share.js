@@ -12,7 +12,7 @@ function mo_chk() {
         } else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)) {
             return os = "ios";
         } else {
-            return os = "otehr";
+            return os = "other";
         }
 
     } else {
@@ -22,6 +22,7 @@ function mo_chk() {
 
 
 function action_app_instagram(android_url, ios_url, ios_appstore_url) {
+
     var result_mo_chk = mo_chk();
 
     if (result_mo_chk != "pc") {
