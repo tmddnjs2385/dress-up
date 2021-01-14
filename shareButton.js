@@ -1,4 +1,4 @@
-var shareButton = document.querySelector('.share-button');
+var shareButton = document.querySelector('.share-button2');
 // const shareDialog = document.querySelector('.share-dialog');
 // const closeButton = document.querySelector('.close-button');
 

@@ -1,18 +1,20 @@
 body{ 
     
     background-color:#cc9ad6;
-  font-family: 'Ubuntu', sans-serif;
-  background-repeat:no-repeat;
-  /* z-index:-1000; */
-  background-size:cover;
-  background-position: center;
+    font-family: 'Ubuntu', sans-serif;
+    background-repeat:no-repeat;
+     /* z-index:-1000; */
+    background-size:cover;
+    background-position: center;
+
 }
 
-
 h1{
+
     text-align: center;
     font-family: "roboto";
     font-size: 60px;
+
 }
 
 
@@ -31,7 +33,7 @@ margin-bottom: 10%
 
 } */
 
-ul{
+#ul1{
 	list-style-type: none;
    display:inline-block; 
    display: flex;
@@ -40,6 +42,17 @@ ul{
    bottom: 200px;
    z-index:10;
 } 
+
+#ul2{
+  list-style-type: none;
+   display:inline-block; 
+   display: flex;
+    position: absolute;
+   right:300px;
+   bottom: 130px;
+   z-index:10;
+
+}
 
 .btn-default{
  

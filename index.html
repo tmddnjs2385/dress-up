@@ -7,7 +7,8 @@
 
     <link rel="stylesheet" type="text/css" href="dressup.css" />
     <link rel="stylesheet" type="text/css" href="sns.css" />
-    <link rel=stylesheet" type='text/css' href="shareButton.css" />
+    <link rel="stylesheet" type="text/css" href="shareButton.scss" <link rel=stylesheet" type='text/css'
+        href="shareButton.css" />
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -15,8 +16,7 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="dressup.js"></script>
     <script src="save.js"></script>
-    <script src="sns.js"></script>
-    <!-- <script src="direct.js"></script> -->
+    <script src="share.js"></script>
 
 </head>
 
@@ -26,41 +26,30 @@
 <body id="capture">
     <h1>KIMU STUDIO</h1>
 
-    <ul>
+    <ul id="ul1">
 
         <li><button class="btn btn-default" id="shirt_button" type="button">shirt</button></li>
         <li><button class="btn btn-default" id="pant_button" type="button">pants</button></li>
         <li><button class="btn btn-default" id="bg_button" type="button">background</button></li>
-        <li><input class="btn btn-default" id="edit" type="button" value="capture" onclick="cap()" /></li>
-        <li><a class="btn btn-default" id="target" href="#" type="button" style="display: none">save</a></li>
-
-        <a class="share-button" type="button" href="https://www.instagram.com/?nibrowser=no" value="share">
-            share
-        </a>
-
-
-
-
-
-
-        <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=https://tmddnjs2385.github.io/dress-up&hashtag=#kimu/"
-            id="shareBtn" class="fa fa-facebook" target="_blank"></a>
-        <a href="https://twitter.com/intent/tweet?&url=https://tmddnjs2385.github.io/dress-up/&hashtags=kimustudio,kimu"
-            target="_blank" class="fa fa-twitter"></a>
-
-        <a href="# " class="fa fa-instagram" target="_blank" onclick='shareButton()' id='share'></a>
-        <a href="#" class="fa fa-pinterest"></a> -->
-
-
-
-
-
-
-
-
-
-
+        <li><input class="btn btn-default" id="edit" type="button" value="capture" /></li>
+        <li><a class="btn btn-default" id="target" href="#" type="button" style="display: none"></a></li>
+        <div class="share-button1">
+            <a class="share-button2">
+                <i class="fab fa-instagram" style="display: none"></i>
+                <span
+                    onclick="action_app_instagram('intent://instagram.com/#Intent;package=com.instagram.android;scheme=https;end', 'instagram://media', 'https://itunes.apple.com/kr/app/instagram/id389801252?mt=8')">instagram</span>
+            </a>
+        </div>
     </ul>
+    <ul id="ul2">
+        <li><button class="btn btn-default" id="shirt_button" type="button">shirt</button></li>
+        <li><button class="btn btn-default" id="pant_button" type="button">pants</button></li>
+        <li><button class="btn btn-default" id="bg_button" type="button">background</button></li>
+        <li><input class="btn btn-default" id="edit" type="button" value="capture" /></li>
+        <li><a class="btn btn-default" id="target" href="#" type="button" style="display: none"></a></li>
+    </ul>
+
+
 
     <img id="character" class="character" src="image/charactor.png" />
     <img id="top1" class="shirt" src="image/shirt1.png" />
@@ -78,24 +67,7 @@
     <img id="bottom6" class="pant" src="image/pant6.png" />
     <img id="bottom7" class="pant" src="image/pant7.png" />
 
-    <script src="shareButton.js">
-
-    </script>
-
-    <!-- <script>
-
-        function cap() {
-            html2canvas(document.querySelector("#capture")).then(canvas => {
-
-
-                const data = canvas.toDataURL('image/png');  //추후에 수정될 수 있음
-                const a = document.createElement('a');
-                a.href = data;
-                a.download = 'image.png';
-                a.click();
-            });
-        }
-
+    <!-- <script src="shareButton.js">
     </script> -->
 
     <script src="direct.js">
